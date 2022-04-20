@@ -10,8 +10,8 @@ Planned Developments:
 
 NOTE: This is a rough draft of my portfolio; I will be adding more updates/features as I continue to learn more.
 
-
-Last update: 02/24/2022
+Created     : 02/24/2022
+Last update : 04/20/2022
 -----------------------------------------------
 Version     |   Date        |   Description
 0.1         |   02/24/2022  |   Project Setup (i.e. Directories, file structure, files)
