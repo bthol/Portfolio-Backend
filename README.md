@@ -3,12 +3,12 @@ Developer: Blake Thollaug
 Description: This is my portfolio website.
 
 Planned Developments:
--add a Header and nav to be used on all pages within my portfolio website
--design a color pallete for my website
--add a Showcase page, where I will put all of my skill and knowledge demonstrations
--add a Bio page, where I will talk about who I am personally.
+-create a projects section
+-use parallax scrolling
+-Have a personal image of me in a circle
+-have a section with links to my projects
 
-NOTE: This is a rough draft of my portfolio; I will be adding more updates/features as I continue to learn more.
+NOTE: Features liable to change.
 
 Created     : 02/24/2022
 Last update : 04/20/2022
