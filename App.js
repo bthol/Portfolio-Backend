@@ -1,6 +1,6 @@
 //start line
 
-//Dendencies
+// Dendencies
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
 
 //Controller indices
-const DataControl = require("./Controls/DataControl")
-app.use(`/data`, DataControl)
+const control1 = require("./Controls/control1")
+app.use(`/data`, control1)
 
 //landing Route
 app.get(`/`, (req, res) => {

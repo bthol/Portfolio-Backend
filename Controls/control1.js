@@ -13,7 +13,7 @@ const URI = process.env.MONGO_URI
 mongoose.connect(URI)
 
 //Modules
-const DataModel1 = require("../Models/DataModel1")
+const model1 = require("../Models/model1")
 
 //Middleware
 router.use(express.json())
@@ -25,7 +25,7 @@ router.get(`/`, async (req, res) => {
     // const ID = req;
     // res.send(`data index is active`)
     try {
-        const dataDay = await DataModel1.find();
+        const dataDay = await model1.find();
         res.send({
             success: true,
             dataDay: dataDay
@@ -44,7 +44,7 @@ router.post(`/`, async (req, res) => {
     // const ID = req;
     // res.send(`Create route accessed`)
     try {
-        const entry = await DataModel1.create(req.body);
+        const entry = await model1.create(req.body);
         res.send({
             success: true,
             entry: entry
@@ -62,7 +62,7 @@ router.get(`/:id`, async (req, res) => {
     // const ID = req;
     // res.send(`read route accessed`)
     try {
-        const datumDay = await DataModel1.findById(req.params.id)
+        const datumDay = await model1.findById(req.params.id)
         if (!datumDay) {throw new Error("No datum by that ID")}
         res.send({
             success: true,
@@ -81,7 +81,7 @@ router.put(`/:id`, async (req, res) => {
     // const ID = req;
     // res.send(`Update route accessed`)
     try {
-        const datumDay = await DataModel1.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        const datumDay = await model1.findByIdAndUpdate(req.params.id, req.body, {new: true})
         res.send({
             success: true,
             datumDay: datumDay
@@ -99,7 +99,7 @@ router.delete(`/:id`, async (req, res) => {
     // const ID = req;
     // res.send(`Delete route accessed`)
     try {
-        const datumDay = await DataModel1.findByIdAndDelete(req.params.id);
+        const datumDay = await model1.findByIdAndDelete(req.params.id);
         res.send({
             success: true,
             datumDay: datumDay
