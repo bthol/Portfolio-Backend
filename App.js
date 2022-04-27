@@ -18,8 +18,7 @@ app.use(`/data`, control1)
 
 //landing Route
 app.get(`/`, (req, res) => {
-    const ID = req;
-    // res.send("index is active")
+    // res.send("land index is active")
     res.redirect(`/data`)
 })
 

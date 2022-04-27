@@ -25,10 +25,10 @@ router.get(`/`, async (req, res) => {
     // const ID = req;
     // res.send(`data index is active`)
     try {
-        const dataDay = await model1.find();
+        const data = await model1.find();
         res.send({
             success: true,
-            dataDay: dataDay
+            data: data
         })
     } catch (err) {
         res.send({
@@ -62,11 +62,11 @@ router.get(`/:id`, async (req, res) => {
     // const ID = req;
     // res.send(`read route accessed`)
     try {
-        const datumDay = await model1.findById(req.params.id)
-        if (!datumDay) {throw new Error("No datum by that ID")}
+        const datum = await model1.findById(req.params.id)
+        if (!datum) {throw new Error("No datum by that ID")}
         res.send({
             success: true,
-            datumDay: datumDay
+            datum: datum
         })
     } catch (err) {
         res.send({
@@ -76,15 +76,15 @@ router.get(`/:id`, async (req, res) => {
     }
 })
 
-//Update route
+//Update route (A.K.A. a PUT request)
 router.put(`/:id`, async (req, res) => {
     // const ID = req;
     // res.send(`Update route accessed`)
     try {
-        const datumDay = await model1.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        const datum = await model1.findByIdAndUpdate(req.params.id, req.body, {new: true})
         res.send({
             success: true,
-            datumDay: datumDay
+            datum: datum
         })
     } catch (err) {
         res.send({
@@ -99,10 +99,10 @@ router.delete(`/:id`, async (req, res) => {
     // const ID = req;
     // res.send(`Delete route accessed`)
     try {
-        const datumDay = await model1.findByIdAndDelete(req.params.id);
+        const datum = await model1.findByIdAndDelete(req.params.id);
         res.send({
             success: true,
-            datumDay: datumDay
+            datum: datum
         })
     } catch (err) {
         res.send({
@@ -113,4 +113,5 @@ router.delete(`/:id`, async (req, res) => {
 })
 
 module.exports = router
+
 //end line

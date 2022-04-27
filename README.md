@@ -1,6 +1,6 @@
 Developer: Blake Thollaug
 
-Description: This is my portfolio website.
+Description: This is my portfolio website back-end.
 
 Dependencies (listed in install order):
 -nodemon (globally installed)
