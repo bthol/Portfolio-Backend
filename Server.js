@@ -14,11 +14,14 @@ server.use(cors());
 
 //Controller indices
 const controlTest = require("./Controls/controlTest");
-server.use(`/data`, controlTest);
+server.use(`/test`, controlTest);
+const controller1 = require("./Controls/controller1");
+server.use(`/data`, controller1);
 
 //landing Route
 server.get(`/`, (req, res) => {
-    res.redirect(`/data`)
+    res.send("Landing Route Accessed")
+    // res.redirect(`/data`)
 })
 
 //Database Error Handling

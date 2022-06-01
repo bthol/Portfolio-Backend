@@ -7,6 +7,6 @@ const schema = new Schema ({
     date: { type: Date, default: Date.now },
 }, {timeStamps: false});
 
-const modelTest = mongoose.model('DataModel1', schema);
+const Model1 = mongoose.model('Model1', schema);
 
-module.exports = modelTest
+module.exports = Model1
