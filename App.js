@@ -13,8 +13,8 @@ server.use(bodyParser.urlencoded({ extended: true }));
 server.use(cors());
 
 //Controller indices
-const control1 = require("./Controls/control1");
-server.use(`/data`, control1);
+const controlTest = require("./Controls/controlTest");
+server.use(`/data`, controlTest);
 
 //landing Route
 server.get(`/`, (req, res) => {

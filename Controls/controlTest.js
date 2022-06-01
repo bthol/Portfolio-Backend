@@ -13,7 +13,7 @@ const URI = process.env.MONGO_URI
 mongoose.connect(URI)
 
 //Modules
-const model1 = require("../Models/model1")
+const modelTest = require("../Models/modelTest");
 
 //Middleware
 router.use(express.json())
@@ -25,7 +25,7 @@ router.get(`/`, async (req, res) => {
     // const ID = req;
     // res.send(`data index is active`)
     try {
-        const data = await model1.find();
+        const data = await modelTest.find();
         res.send({
             success: true,
             data: data
@@ -44,7 +44,7 @@ router.post(`/`, async (req, res) => {
     // const ID = req;
     // res.send(`Create route accessed`)
     try {
-        const entry = await model1.create(req.body);
+        const entry = await modelTest.create(req.body);
         res.send({
             success: true,
             entry: entry
@@ -62,7 +62,7 @@ router.get(`/:id`, async (req, res) => {
     // const ID = req;
     // res.send(`read route accessed`)
     try {
-        const datum = await model1.findById(req.params.id)
+        const datum = await modelTest.findById(req.params.id)
         if (!datum) {throw new Error("No datum by that ID")}
         res.send({
             success: true,
@@ -77,11 +77,11 @@ router.get(`/:id`, async (req, res) => {
 })
 
 //Update route (A.K.A. a PUT request)
-router.put(`/:id`, async (req, res) => {
+router.patch(`/:id`, async (req, res) => {
     // const ID = req;
     // res.send(`Update route accessed`)
     try {
-        const datum = await model1.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        const datum = await modelTest.findByIdAndUpdate(req.params.id, req.body, {new: true})
         res.send({
             success: true,
             datum: datum
@@ -99,7 +99,7 @@ router.delete(`/:id`, async (req, res) => {
     // const ID = req;
     // res.send(`Delete route accessed`)
     try {
-        const datum = await model1.findByIdAndDelete(req.params.id);
+        const datum = await modelTest.findByIdAndDelete(req.params.id);
         res.send({
             success: true,
             datum: datum
