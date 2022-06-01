@@ -10,7 +10,7 @@
   "name": "portfolio-backend",
   "description": "Developer: Blake Thollaug",
   "version": "1.0.0",
-  "main": "App.js",
+  "main": "Server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

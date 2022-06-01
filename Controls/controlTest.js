@@ -19,8 +19,7 @@ const modelTest = require("../Models/modelTest");
 router.use(express.json())
 router.use(express.urlencoded({extended: true}))
 
-
-//Data Index (shows data structure)
+//Data Index (shows entire data structure)
 router.get(`/`, async (req, res) => {
     // const ID = req;
     // res.send(`data index is active`)
@@ -29,25 +28,6 @@ router.get(`/`, async (req, res) => {
         res.send({
             success: true,
             data: data
-        })
-    } catch (err) {
-        res.send({
-            success: false,
-            error: err.message
-        })
-    }
-})
-
-//CRUD Operations
-//Create route (enters data using model format into databse)
-router.post(`/`, async (req, res) => {
-    // const ID = req;
-    // res.send(`Create route accessed`)
-    try {
-        const entry = await modelTest.create(req.body);
-        res.send({
-            success: true,
-            entry: entry
         })
     } catch (err) {
         res.send({
@@ -76,7 +56,26 @@ router.get(`/:id`, async (req, res) => {
     }
 })
 
-//Update route (A.K.A. a PUT request)
+//CRUD Operations
+//Create route (enters data using model format into databse)
+router.post(`/`, async (req, res) => {
+    // const ID = req;
+    // res.send(`Create route accessed`)
+    try {
+        const entry = await modelTest.create(req.body);
+        res.send({
+            success: true,
+            entry: entry
+        })
+    } catch (err) {
+        res.send({
+            success: false,
+            error: err.message
+        })
+    }
+})
+
+//Update route
 router.patch(`/:id`, async (req, res) => {
     // const ID = req;
     // res.send(`Update route accessed`)
